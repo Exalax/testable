@@ -11,6 +11,10 @@ func Now() time.Time {
 	return time.Now()
 }
 
+func Until(t time.Time) time.Duration {
+	return t.Sub(Now())
+}
+
 func Set(t time.Time) {
 	now = t
 }
