@@ -30,3 +30,14 @@ func TestReset(t *testing.T) {
 
 	assert.NotEqual(t, someTime, Now())
 }
+
+func TestUntil(t *testing.T) {
+	someTime := time.Date(2015, time.May, 12, 18, 43, 21, 0, time.UTC)
+
+	Set(someTime)
+	defer Reset()
+
+	untilTime := time.Date(2015, time.May, 12, 20, 43, 21, 0, time.UTC)
+
+	assert.Equal(t, 2*time.Hour, Until(untilTime))
+}
