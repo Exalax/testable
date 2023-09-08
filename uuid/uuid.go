@@ -37,3 +37,7 @@ func SetRandom(n int) []uuid.UUID {
 
 	return uuids
 }
+
+func Parse(id string) (uuid.UUID, error) {
+	return uuid.Parse(id)
+}
